@@ -113,7 +113,8 @@ int main(int argc, char* argv[]) {
 	assert(Main != nullptr);
 
 #if defined(_WIN32)
-	assert(OleInitialize(nullptr) == S_OK); // For COM (like WPF or Clipboard)
+	hr = OleInitialize(nullptr);
+	assert(hr == 0); // For COM (like WPF or Clipboard)
 #endif
 	Main(); // Run application
 	*/
